@@ -1,6 +1,6 @@
 {
   "name": "@mdude2314/backstage-plugin-scaffolder-git-actions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "types": "src/index.ts",
