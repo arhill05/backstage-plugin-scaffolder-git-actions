@@ -1,5 +1,5 @@
 import { createTemplateAction, executeShellCommand } from '@backstage/plugin-scaffolder-backend';
-import * as fsPromises from 'fs.promises';
+import * as fsPromises from 'fs/promises';
 import * as fs from 'fs';
 
 export const gitCloneAction = () => {
