@@ -1,0 +1,38 @@
+{
+  "name": "@arhill05/backstage-plugin-scaffolder-git-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "backend-plugin"
+  },
+  "scripts": {
+    "start": "backstage-cli backend:dev",
+    "build": "backstage-cli backend:build",
+    "lint": "backstage-cli lint",
+    "test": "backstage-cli test",
+    "prepack": "backstage-cli prepack",
+    "postpack": "backstage-cli postpack",
+    "clean": "backstage-cli clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@backstage/backend-common": "^0.13.2",
+    "@backstage/config": "^1.0.0",
+    "@backstage/errors": "^1.0.0",
+    "@backstage/plugin-scaffolder-backend": "^1.1.0",
+    "fs.promises": "^0.1.2",
+    "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.17.0",
+    "@types/promise-fs": "^2.1.2"
+  }
+}
