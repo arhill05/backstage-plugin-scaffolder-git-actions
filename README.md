@@ -87,9 +87,9 @@ spec:
       name: git
       action: git
       input:
-        command: ${{ parameters.command }}
-        workingDirectory: ${{ parameters.workingDirectory }}
-        args: ${{ parameters.args }}
+        command: ${{ parameters.command }} # ex: 'commit' - will make the scaffolder run the `git commit` command
+        workingDirectory: ${{ parameters.workingDirectory }} # ex: './my-working-directory' - will execute the command in the specified directory relative to the scaffolder workspace
+        args: ${{ parameters.args }} # ex: ['-m', 'My commit message'] - will add '-m My commit message' to the arguments passed to the git command
 ```
 
 ## Example of using the clone action
