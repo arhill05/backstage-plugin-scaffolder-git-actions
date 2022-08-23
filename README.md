@@ -7,6 +7,9 @@ This contains a collection of actions for using with git:
 - git
 - git:clone
 
+## Prerequisites
+- Git must be installed in the environment your Backstage instance is running in
+
 ## Getting started
 
 In the root directory of your Backstage project:
@@ -21,8 +24,12 @@ Add the actions you'd like to the scaffolder:
 // packages/backend/src/plugins/scaffolder.ts
 
 import { gitCloneAction, gitAction } from "@mdude2314/backstage-plugin-scaffolder-git-actions";
+import { ScmIntegrations } from '@backstage/integration';
+import { createBuiltinActions, createRouter } from '@backstage/plugin-scaffolder-backend';
+
 ...
 
+const integrations = ScmIntegrations.fromConfig(env.config);
 const builtInActions = createBuiltinActions({
   catalogClient,
   integrations,
@@ -80,9 +87,9 @@ spec:
       name: git
       action: git
       input:
-        command: ${{ parameters.command }}
-        workingDirectory: ${{ parameters.workingDirectory }}
-        args: ${{ parameters.args }}
+        command: ${{ parameters.command }} # ex: 'commit' - will make the scaffolder run the `git commit` command
+        workingDirectory: ${{ parameters.workingDirectory }} # ex: './my-working-directory' - will execute the command in the specified directory relative to the scaffolder workspace
+        args: ${{ parameters.args }} # ex: ['-m', 'My commit message'] - will add '-m My commit message' to the arguments passed to the git command
 ```
 
 ## Example of using the clone action
